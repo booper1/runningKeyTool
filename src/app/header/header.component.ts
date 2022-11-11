@@ -24,12 +24,10 @@ export class HeaderComponent implements OnInit {
     }
 
     onClickSettings(): void {
-        //console.log("Toggle Settings Menu");
     }
 
     onClickShuffle(): void {
-        console.log("Shuffle");
-         this.shuffleColor = '#' + (Math.random() * 0xCCCCCC << 0).toString(16).padStart(6, '0');
+        this.shuffleColor = '#' + (Math.random() * 0xCCCCCC << 0).toString(16).padStart(6, '0');
     }
 
 }
