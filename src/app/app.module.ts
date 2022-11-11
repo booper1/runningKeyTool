@@ -8,7 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
     declarations: [
@@ -27,6 +26,6 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 })
 export class AppModule {
     constructor(library: FaIconLibrary) {
-        library.addIconPacks(fas, far);
+        library.addIconPacks(fas);
     }
 }
