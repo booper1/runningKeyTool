@@ -1,8 +1,33 @@
 body {
-    background-color: lightsteelblue !important;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
-.bg-chrome {
-    background-color: #333;
+.themeMonochrome {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+}
+
+.themeGeneric {
+    background-color: #241235 !important;
+    color: #ea088b !important;
+}
+
+.themeAutumn {
+    background-color: #404040 !important;
+    color: #fc7b00 !important;
+}
+
+.themeSpring {
+    background-color: #075452 !important;
+    color: #f9e830 !important;
+}
+
+.themeSummer {
+    background-color: #3e4a74 !important;
+    color: #6b9e17 !important;
+}
+
+.themeWinter {
+    background-color: #151c36 !important;
+    color: #b5e5e7 !important;
 }
