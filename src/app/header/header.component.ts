@@ -61,7 +61,6 @@ export class HeaderComponent implements OnInit {
     }
 
     onClickSettings(): void {
-        console.log(this.themes.indexOf(Global.theme));
         Global.theme = this.themes[(this.themes.indexOf(Global.theme) + 1) % this.themes.length];
     }
 }
