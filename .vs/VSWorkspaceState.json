@@ -3,10 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\content",
+    "\\src\\app\\about",
     "\\src\\app\\footer",
     "\\src\\app\\header",
+    "\\src\\app\\home",
     "\\src\\assets"
   ],
+  "SelectedNode": "\\src\\index.html",
   "PreviewInSolutionExplorer": false
 }

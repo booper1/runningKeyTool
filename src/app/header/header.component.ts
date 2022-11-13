@@ -10,8 +10,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         trigger('rotatedState', [
             state('light', style({ transform: 'rotate(0)' })),
             state('dark', style({ transform: 'rotate(-180deg)' })),
-            transition('dark => light', animate('0ms ease-in-out')),
-            transition('light => dark', animate('0ms ease-in-out'))
+            transition('dark => light', animate('50ms ease-in-out')),
+            transition('light => dark', animate('50ms ease-in-out'))
         ])
     ]
 })
