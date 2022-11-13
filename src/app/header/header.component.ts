@@ -1,66 +1,44 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Global } from '../global';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss']
+    styleUrls: ['./header.component.scss'],
+    animations: [
+        trigger('rotatedState', [
+            state('light', style({ transform: 'rotate(0)' })),
+            state('dark', style({ transform: 'rotate(-180deg)' })),
+            transition('dark => light', animate('0ms ease-in-out')),
+            transition('light => dark', animate('0ms ease-in-out'))
+        ])
+    ]
 })
-export class HeaderComponent implements OnInit {
-    @Input() color!: string;
-    @Output() colorChange = new EventEmitter<string>();
-
+export class HeaderComponent {
     title = Global.title;
     navItems = [
-        { title: "More", route: "#" },
-        { title: "Coming", route: "#" },
-        { title: "Soon", route: "#" },
-        { title: "™", route: "#" }
+        { title: "Home", route: "" },
+        { title: "About", route: "about" }
     ];
-    themes: Array<string> = [
-        "themeMonochrome",
-        "themeGeneric",
-        "themeAutumn",
-        "themeWinter",
-        "themeSpring",
-        "themeSummer"
-    ];
-
-    ngOnInit(): void {
-        let today = new Date();
-        let month = today.getMonth();
-        switch (month) {
-            case 11:
-            case 0:
-            case 1:
-                Global.theme = "themeWinter";
-                break;
-            case 2:
-            case 3:
-            case 4:
-                Global.theme = "themeSpring";
-                break;
-            case 5:
-            case 6:
-            case 7:
-                Global.theme = "themeSummer";
-                break;
-            case 8:
-            case 9:
-            case 10:
-                Global.theme = "themeAutumn";
-                break;
-
-            default:
-                Global.theme = this.themes[0];
-        }
-    }
+    theme: string = 'light';
 
     getHeaderClass(): string {
         return Global.theme;
     }
 
-    onClickSettings(): void {
-        Global.theme = this.themes[(this.themes.indexOf(Global.theme) + 1) % this.themes.length];
+    onClickTheme(): void {
+        Global.theme = Global.theme == "themeMono" ? "themeSynth" : "themeMono";
+        this.theme = (this.theme === 'light' ? 'dark' : 'light');
+        switch (Global.theme) {
+            case ("themeSynth"):
+                document.documentElement.style.setProperty("--theme-bg", Global.themeSynth_bg);
+                document.documentElement.style.setProperty("--theme-text", Global.themeSynth_text);
+                break;
+            default:
+                document.documentElement.style.setProperty("--theme-bg", Global.themeMono_bg);
+                document.documentElement.style.setProperty("--theme-text", Global.themeMono_text);
+                break;
+        }
     }
 }

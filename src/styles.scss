@@ -1,33 +1,22 @@
+:root {
+    --theme-bg: #333333;
+    --theme-text: #ffffff;
+}
+
 body {
+    background-color: #cccccc;
     overflow-x: hidden !important;
 }
 
-.themeMonochrome {
-    background-color: #333333 !important;
-    color: #ffffff !important;
+.theme {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
 }
 
-.themeGeneric {
-    background-color: #241235 !important;
-    color: #ea088b !important;
-}
-
-.themeAutumn {
-    background-color: #404040 !important;
-    color: #fc7b00 !important;
-}
-
-.themeSpring {
-    background-color: #075452 !important;
-    color: #f9e830 !important;
-}
-
-.themeSummer {
-    background-color: #3e4a74 !important;
-    color: #6b9e17 !important;
-}
-
-.themeWinter {
-    background-color: #151c36 !important;
-    color: #b5e5e7 !important;
+.main-content {
+    background-color: rgb(255, 255, 255);
+    margin: 1em 0px;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.27) 0px 1px 8px;
+    border-radius: 4px;
 }

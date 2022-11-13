@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Global } from '../global';
 
 @Component({
     selector: 'app-footer',
@@ -7,7 +6,4 @@ import { Global } from '../global';
     styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-    getFooterClass(): string {
-        return Global.theme;
-    }
 }

@@ -1,13 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\docs",
     "\\src",
     "\\src\\app",
     "\\src\\app\\content",
     "\\src\\app\\footer",
-    "\\src\\app\\header"
+    "\\src\\app\\header",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\header\\header.component.ts",
   "PreviewInSolutionExplorer": false
 }
