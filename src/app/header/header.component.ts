@@ -16,7 +16,6 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]
 })
 export class HeaderComponent {
-    title = Global.title;
     navItems = [
         { title: "Home", route: "" },
         { title: "About", route: "about" }

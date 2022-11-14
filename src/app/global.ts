@@ -1,5 +1,5 @@
 export class Global {
-    public static title: string = "Booper_1's Portfolio";
+    public static author: string = "Booper_1";
     public static theme: string = "themeMono";
 
     // Styles

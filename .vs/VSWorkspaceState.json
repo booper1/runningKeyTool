@@ -9,6 +9,6 @@
     "\\src\\app\\home",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\index.html",
+  "SelectedNode": "\\src\\app\\header\\header.component.ts",
   "PreviewInSolutionExplorer": false
 }

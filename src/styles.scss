@@ -5,7 +5,7 @@
 
 body {
     background-color: #cccccc;
-    overflow-x: hidden !important;
+    overflow-x: hidden;
 }
 
 .theme {
@@ -19,8 +19,4 @@ body {
     border-radius: 0.3rem;
     box-shadow: rgba(0, 0, 0, 0.27) 0px 1px 8px;
     border-radius: 4px;
-}
-
-* {
-    font-family: "Segoe UI";
 }
