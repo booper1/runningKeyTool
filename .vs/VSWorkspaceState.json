@@ -4,11 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\about",
-    "\\src\\app\\footer",
-    "\\src\\app\\header",
+    "\\src\\app\\contact",
     "\\src\\app\\home",
+    "\\src\\app\\projects",
+    "\\src\\app\\sidenav",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\header\\header.component.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -1,20 +1,21 @@
-<div class="row py-3">
-    <div class="col d-flex align-items-center justify-content-center">
-        <span class="logo">
-            <img [src]="'../../assets/' + 'themeMono' + '.svg'" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
-            <span class="topbracket"></span>
-            <span class="bottombracket"></span>
-        </span>
+<nav class="show" id="nav">
+    <div class="burger" id="icon" (click)="toggle()">
+        <div class="topBun angle" id="b1"></div>
+        <div class="patty hide" id="b2"></div>
+        <div class="botBun angle" id="b3"></div>
     </div>
-</div>
 
-<div *ngFor="let item of navItems" class="row py-3">
-    <div class="col d-flex align-items-center justify-content-center">
-        <h3 class="row row-col-2 nav-content text-center" [routerLink]="[item.route]">
-            <fa-icon [icon]="item.icon" class="col-1 d-flex align-items-center justify-content-center"></fa-icon>
-            <span class="col">
-                {{ item.title }}
-            </span>
-        </h3>
-    </div>
-</div>
+    <!--<img [src]="'../../assets/' + 'themeMono' + '.svg'" alt="Logo" class="logo">-->
+
+    <ul>
+        <li *ngFor="let item of navItems"
+            [routerLink]="[item.title]"
+            (keydown.enter)="onKeyDownEvent(item.title)">
+
+            <div class="navIcon"><fa-icon [icon]="item.icon"></fa-icon></div>
+            <div class="navText"><span>{{ item.title }}</span></div>
+        </li>
+    </ul>
+
+    <fa-icon [icon]="['fas', 'gear']" class="settings"></fa-icon>
+</nav>

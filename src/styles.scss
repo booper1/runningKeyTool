@@ -1,71 +1,13 @@
 :root {
-    --theme-bg: #333;
-    --theme-text: #fff;
-    --offset: -20;
-    --size: 30px;
-    --border: #f79420;
-    --nav-length: 0ch;
-}
+    --theme-1: #333;
+    --theme-2: white;
+    --theme-3: #777;
+    --theme-4: black;
 
-body {
-    background-color: #333;
-    overflow-x: hidden;
-}
+    --nav-gap: 1rem;
+    --nav-icon-size: 60px;
 
-.theme {
-    background-color: var(--theme-bg);
-    color: var(--theme-text);
-}
-
-.nav-content {
-    background-color: #777;
-    margin: 0 5em 0 5em;
-    border-radius: 0.3rem;
-    box-shadow: rgba(0, 0, 0, 0.27) 0px 1px 8px;
-    border-radius: 4px;
-    padding: 0.2em 0.6em 0.2em 0.6em;
-    min-width: var(--nav-length);
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-}
-
-.nav-content:hover {
-    transform: scale(1.1);
-}
-
-.logo {
-    position: absolute;
-    top: 10vh;
-}
-
-.bottombracket {
-    position: absolute;
-    width: var(--size);
-    height: var(--size);
-    border-bottom: 5px solid var(--border);
-    border-left: 5px solid var(--border);
-    bottom: var(--offset);
-    left: var(--offset);
-}
-
-.topbracket {
-    position: absolute;
-    width: var(--size);
-    height: var(--size);
-    border-top: 5px solid var(--border);
-    border-right: 5px solid var(--border);
-    top: var(--offset);
-    right: var(--offset);
-}
-
-.logoContainer {
-    background-color: red;
-    padding: 5em;
-}
-
-.side {
-}
-
-.main {
-    background-color: #777;
+    --nav-per: 17%;
+    --nav-max: 360px;
+    --nav-min: 260px;
 }

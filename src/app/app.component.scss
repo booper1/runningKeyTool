@@ -1,0 +1,32 @@
+body {
+    background-color: var(--theme-3);
+}
+
+.wrapper {
+    background-color: #777;
+    height: 100%;
+    display: flex;
+}
+
+.sidebar {
+    flex: 0 0 auto;
+    width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
+    height: 100%;
+    transition: all 400ms ease-in-out;
+    transition-delay: 50ms;
+}
+
+@media (min-width: 1360px) {
+    .sidebar.show {
+        width: var(--nav-per);
+    }
+}
+
+.main {
+    color: var(--theme-1);
+    flex: 1 0 0%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
