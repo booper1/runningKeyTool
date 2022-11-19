@@ -1,9 +1,5 @@
-body {
-    background-color: var(--theme-3);
-}
-
 .wrapper {
-    background-color: #777;
+    background-color: var(--theme-1);
     height: 100%;
     display: flex;
 }
@@ -14,7 +10,6 @@ body {
     height: 100%;
     transition: all 400ms ease-in-out;
     transition-delay: 50ms;
-    background-color: red;
     min-width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
 }
 
@@ -28,7 +23,7 @@ body {
 }
 
 .main {
-    color: var(--theme-1);
+    color: var(--theme-5);
     flex: 1 0 0%;
     height: 100%;
     display: flex;
@@ -39,7 +34,7 @@ body {
 }
 
 // Medium threshold
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .sidebar.push {
         width: var(--nav-per);
         min-width: var(--nav-min);
@@ -47,18 +42,19 @@ body {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .clickNet.enabled {
         width: 100vw;
         height: 100vh;
     }
+
     .main.blur {
         filter: blur(2px);
     }
 }
 
 // Small threshold
-@media (max-width: 600px) {
+@media (max-width: 576px) {
     .sidebar {
         width: 0;
         min-width: 0;

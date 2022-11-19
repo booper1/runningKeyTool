@@ -1,13 +1,31 @@
 :root {
-    --theme-1: #333;
-    --theme-2: white;
-    --theme-3: #777;
-    --theme-4: black;
+    --theme-1: #121212; // Background
+    --theme-2: #202020; // Surface
+    --theme-3: #fc7b00; // Primary
+    --theme-4: #4a7912; // Secondary
+    --theme-5: #d7d7d7; // On Background
+    --theme-6: #a2a2a2; // On Surface Head
+    --theme-7: #e2e2e2; // On Surface Main
+    --theme-8: #7c3c00; // On Primary
+    --theme-9: #1a2904; // On Secondary
+    --theme-10: #0000008a; // Shadow
 
     --nav-gap: 1rem;
     --nav-icon-size: 60px;
-
     --nav-per: 17%;
     --nav-min: 260px;
     --nav-max: 360px;
+}
+
+[data-theme="light"] {
+    --theme-1: #ffffff; // Background
+    --theme-2: #eeeeee; // Surface
+    --theme-3: #fc7b00; // Primary
+    --theme-4: #4a7912; // Secondary
+    --theme-5: #000000; // On Background
+    --theme-6: #a2a2a2; // On Surface Head
+    --theme-7: #212121; // On Surface Main
+    --theme-8: #7c3c00; // On Primary
+    --theme-9: #1a2904; // On Secondary
+    --theme-10: #00000045; // Shadow
 }

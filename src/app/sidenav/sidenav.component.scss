@@ -8,11 +8,11 @@
     border-radius: 50%;
     z-index: 99;
     transition: all 400ms ease-in-out;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--theme-6);
 
     &:hover {
         transform: scale(1.1);
-        box-shadow: 0px 0px 0.72em rgba(0, 0, 0, 0.27);
+        box-shadow: 0px 0px 0.72em var(--theme-10);
     }
 }
 
@@ -22,7 +22,7 @@
     left: 25%;
     width: calc(var(--nav-icon-size) / 2);
     height: 3px;
-    background-color: var(--theme-4);
+    background-color: var(--theme-1);
     transition: all 400ms cubic-bezier(.84,.06,.52,1.8);
     animation-delay: 50ms;
 }
@@ -47,32 +47,37 @@
     transform: rotate(-42deg);
 }
 
-.logo {
+.navTheme {
     position: absolute;
-    height: var(--nav-icon-size);
-    width: var(--nav-icon-size);
-    top: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
-    left: var(--nav-gap);
-}
-
-.settings {
-    position: absolute;
-    border-radius: 50%;
-    font-size: calc(var(--nav-icon-size) * 2 / 3);
-    padding: calc(var(--nav-icon-size) * 1 / 6);
-    color: var(--theme-2);
     bottom: var(--nav-gap);
     left: var(--nav-gap);
+    border-radius: 50%;
+    height: var(--nav-icon-size);
+    width: var(--nav-icon-size);
     cursor: pointer;
-    transition: all 200ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--nav-icon-size) * 2 / 3);
+    color: var(--theme-7);
 
     &:hover {
         transform: scale(1.1);
     }
 }
 
+.mode {
+    position: absolute;
+    transition: all 200ms ease-in-out;
+    opacity: 0%;
+}
+
+.mode.show {
+    opacity: 100%;
+}
+
 nav {
-    background: var(--theme-1);
+    background: var(--theme-2);
     position: absolute;
     top: 0;
     left: 0;
@@ -82,6 +87,7 @@ nav {
     transition: all 400ms ease-in-out;
     transition-delay: 50ms;
     z-index: 49;
+    box-shadow: 0px 0px 0.72em var(--theme-10);
 
     ul {
         padding-left: 0;
@@ -95,7 +101,7 @@ nav {
             height: var(--nav-icon-size);
             margin: var(--nav-gap) var(--nav-gap) var(--nav-gap) var(--nav-gap);
             font-size: calc(var(--nav-icon-size) / 2);
-            color: var(--theme-2);
+            color: var(--theme-7);
             line-height: 2;
             letter-spacing: 0px;
             text-transform: uppercase;
@@ -104,7 +110,7 @@ nav {
             border-radius: 5px;
 
             &:hover {
-                box-shadow: 0px 0px 0.72em rgba(0, 0, 0, 0.27);
+                box-shadow: 0px 0px 0.72em var(--theme-10);
                 background: rgba(255, 255, 255, 0.1);
             }
 
@@ -152,14 +158,16 @@ nav.show {
 }
 
 // Small threshold
-@media (max-width: 600px) {
+@media (max-width: 576px) {
     nav {
         left: -260px;
         width: var(--nav-per);
         min-width: var(--nav-min);
+        box-shadow: none;
     }
 
     nav.show {
         left: 0px;
+        box-shadow: 0px 0px 0.72em var(--theme-10);
     }
 }

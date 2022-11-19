@@ -1,4 +1,4 @@
-<div class="burger" id="icon" (click)="toggle()">
+<div class="burger" (click)="toggleNav()">
     <div class="topBun angle" id="b1"></div>
     <div class="patty hide" id="b2"></div>
     <div class="botBun angle" id="b3"></div>
@@ -8,12 +8,15 @@
     <ul>
         <li *ngFor="let item of navItems"
             [routerLink]="[item.title]"
-            (keydown.enter)="onKeyDownEvent(item.title)">
+            (keydown.enter)="onKeyDownEvent(item.title)"
+            (click)="closeNav()">
 
             <div class="navIcon"><fa-icon [icon]="item.icon"></fa-icon></div>
             <div class="navText"><span>{{ item.title }}&nbsp;</span></div>
         </li>
     </ul>
-
-    <fa-icon [icon]="['fas', 'gear']" class="settings"></fa-icon>
+    <div class="navTheme" (click)="toggleTheme()">
+        <fa-icon [icon]="['fas', 'sun']" class="mode" id="light"></fa-icon>
+        <fa-icon [icon]="['fas', 'moon']" class="mode show" id="dark"></fa-icon>
+    </div>
 </nav>

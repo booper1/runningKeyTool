@@ -25,17 +25,34 @@ export class SidenavComponent implements OnInit {
         Global.topBun = document.getElementById("b1");
         Global.patty = document.getElementById("b2");
         Global.botBun = document.getElementById("b3");
-        Global.sidebar = document.getElementById("side");
-        Global.clickNet = document.getElementById("clickNet");
         Global.nav = document.getElementById("nav");
-        Global.main = document.getElementById("main");
+        Global.light = document.getElementById("light");
+        Global.dark = document.getElementById("dark");
+
+        if (window.matchMedia("(max-width: 1200px)").matches) {
+            Global.toggleNav();
+        }
+
+        if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+            Global.toggleTheme();
+        }
     }
 
     onKeyDownEvent(route: string) {
         this.router.navigate([route], { relativeTo: this.route });
     }
 
-    toggle(): void {
-        Global.toggle();
+    toggleNav(): void {
+        Global.toggleNav();
+    }
+
+    closeNav(): void {
+        if (Global.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
+            Global.toggleNav();
+        }
+    }
+
+    toggleTheme(): void {
+        Global.toggleTheme();
     }
 }

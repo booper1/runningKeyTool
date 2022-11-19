@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Global } from './global';
 
 @Component({
@@ -11,11 +10,10 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         Global.sidebar = document.getElementById("side");
         Global.clickNet = document.getElementById("clickNet");
-        Global.nav = document.getElementById("nav");
         Global.main = document.getElementById("main");
     }
 
-    toggle(): void {
-        Global.toggle();
+    toggleNav(): void {
+        Global.toggleNav();
     }
 }
