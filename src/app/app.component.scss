@@ -14,12 +14,17 @@ body {
     height: 100%;
     transition: all 400ms ease-in-out;
     transition-delay: 50ms;
+    background-color: red;
+    min-width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
 }
 
-@media (min-width: 1360px) {
-    .sidebar.show {
-        width: var(--nav-per);
-    }
+.clickNet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0vw;
+    height: 0vh;
+    z-index: 29;
 }
 
 .main {
@@ -29,4 +34,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 400ms ease-in-out;
+    transition-delay: 50ms;
+}
+
+// Medium threshold
+@media (min-width: 992px) {
+    .sidebar.push {
+        width: var(--nav-per);
+        min-width: var(--nav-min);
+        max-width: var(--nav-max);
+    }
+}
+
+@media (max-width: 992px) {
+    .clickNet.enabled {
+        width: 100vw;
+        height: 100vh;
+    }
+    .main.blur {
+        filter: blur(2px);
+    }
+}
+
+// Small threshold
+@media (max-width: 600px) {
+    .sidebar {
+        width: 0;
+        min-width: 0;
+    }
 }

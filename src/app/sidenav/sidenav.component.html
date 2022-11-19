@@ -1,19 +1,17 @@
+<div class="burger" id="icon" (click)="toggle()">
+    <div class="topBun angle" id="b1"></div>
+    <div class="patty hide" id="b2"></div>
+    <div class="botBun angle" id="b3"></div>
+</div>
+
 <nav class="show" id="nav">
-    <div class="burger" id="icon" (click)="toggle()">
-        <div class="topBun angle" id="b1"></div>
-        <div class="patty hide" id="b2"></div>
-        <div class="botBun angle" id="b3"></div>
-    </div>
-
-    <!--<img [src]="'../../assets/' + 'themeMono' + '.svg'" alt="Logo" class="logo">-->
-
     <ul>
         <li *ngFor="let item of navItems"
             [routerLink]="[item.title]"
             (keydown.enter)="onKeyDownEvent(item.title)">
 
             <div class="navIcon"><fa-icon [icon]="item.icon"></fa-icon></div>
-            <div class="navText"><span>{{ item.title }}</span></div>
+            <div class="navText"><span>{{ item.title }}&nbsp;</span></div>
         </li>
     </ul>
 

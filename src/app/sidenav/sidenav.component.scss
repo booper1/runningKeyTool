@@ -6,6 +6,7 @@
     left: var(--nav-gap);
     cursor: pointer;
     border-radius: 50%;
+    z-index: 99;
     transition: all 400ms ease-in-out;
     background: rgba(255, 255, 255, 0.2);
 
@@ -80,6 +81,7 @@ nav {
     min-width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
     transition: all 400ms ease-in-out;
     transition-delay: 50ms;
+    z-index: 49;
 
     ul {
         padding-left: 0;
@@ -88,8 +90,6 @@ nav {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
-        transition: all 400ms ease-in-out;
-        transition-delay: 50ms;
 
         li {
             height: var(--nav-icon-size);
@@ -100,10 +100,8 @@ nav {
             letter-spacing: 0px;
             text-transform: uppercase;
             display: flex;
-            transition-delay: 50ms;
             cursor: pointer;
             border-radius: 5px;
-            transition: all 200ms ease-in-out;
 
             &:hover {
                 box-shadow: 0px 0px 0.72em rgba(0, 0, 0, 0.27);
@@ -150,5 +148,18 @@ nav.show {
                 font-size: calc(var(--nav-icon-size) / 2);
             }
         }
+    }
+}
+
+// Small threshold
+@media (max-width: 600px) {
+    nav {
+        left: -260px;
+        width: var(--nav-per);
+        min-width: var(--nav-min);
+    }
+
+    nav.show {
+        left: 0px;
     }
 }
