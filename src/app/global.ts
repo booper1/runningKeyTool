@@ -19,7 +19,6 @@ export class Global {
     public static dark: any;
 
     public static navOpen: boolean = true;
-    public static darkMode: boolean = true;
 
     public static toggleNav(): void {
         Global.topBun != null ? Global.topBun.classList.toggle('angle') : console.log("Undefined");
@@ -36,13 +35,15 @@ export class Global {
         Global.light != null ? Global.light.classList.toggle('show') : console.log("Undefined");
         Global.dark != null ? Global.dark.classList.toggle('show') : console.log("Undefined");
 
-        if (Global.darkMode) {
+        if (document.documentElement.getAttribute('data-theme') !== 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
-            Global.darkMode = !Global.darkMode;
+            localStorage.setItem('data-theme', 'light');
+            console.log('Light');
         }
         else {
             document.documentElement.setAttribute('data-theme', 'dark');
-            Global.darkMode = !Global.darkMode;
+            localStorage.setItem('data-theme', 'dark');
+            console.log('Dark');
         }
     }
 }
