@@ -33,10 +33,7 @@ export class SidenavComponent implements OnInit {
             Global.toggleNav();
         }
 
-        if (localStorage.getItem('data-theme') === null &&
-            window.matchMedia("(prefers-color-scheme: light)").matches) {
-
-            console.log(localStorage.getItem('data-theme'));
+        if (localStorage.getItem('data-theme') === null && window.matchMedia("(prefers-color-scheme: light)").matches) {
             Global.toggleTheme();
         }
         else {

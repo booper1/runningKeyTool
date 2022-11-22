@@ -1,6 +1,7 @@
 :root {
+    // Default [data-theme="dark"]
     --theme-1: #121212; // Background
-    --theme-2: #202020; // Surface
+    --theme-2: #323232; // Surface
     --theme-3: #fc7b00; // Primary
     --theme-4: #4a7912; // Secondary
     --theme-5: #d7d7d7; // On Background
@@ -15,17 +16,18 @@
     --nav-per: 17%;
     --nav-min: 260px;
     --nav-max: 360px;
+    --transition-time: 300ms;
 }
 
 [data-theme="light"] {
-    --theme-1: #ffffff; // Background
-    --theme-2: #eeeeee; // Surface
+    --theme-1: #ededed; // Background
+    --theme-2: #cdcdcd; // Surface
     --theme-3: #fc7b00; // Primary
     --theme-4: #4a7912; // Secondary
-    --theme-5: #000000; // On Background
-    --theme-6: #a2a2a2; // On Surface Head
-    --theme-7: #212121; // On Surface Main
+    --theme-5: #282828; // On Background
+    --theme-6: #5d5d5d; // On Surface Head
+    --theme-7: #1d1d1d; // On Surface Main
     --theme-8: #7c3c00; // On Primary
     --theme-9: #1a2904; // On Secondary
-    --theme-10: #00000045; // Shadow
+    --theme-10: #0000008a; // Shadow
 }

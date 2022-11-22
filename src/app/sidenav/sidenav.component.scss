@@ -7,7 +7,7 @@
     cursor: pointer;
     border-radius: 50%;
     z-index: 99;
-    transition: all 400ms ease-in-out;
+    transition: all calc(var(--transition-time) / 2) ease-in-out;
     background: var(--theme-6);
 
     &:hover {
@@ -23,7 +23,7 @@
     width: calc(var(--nav-icon-size) / 2);
     height: 3px;
     background-color: var(--theme-1);
-    transition: all 400ms cubic-bezier(.84,.06,.52,1.8);
+    transition: all var(--transition-time) cubic-bezier(.84,.06,.52,1.8);
     animation-delay: 50ms;
 }
 
@@ -59,6 +59,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(var(--nav-icon-size) * 2 / 3);
+    transition: all calc(var(--transition-time) / 2) ease-in-out;
     color: var(--theme-7);
 
     &:hover {
@@ -66,13 +67,12 @@
     }
 }
 
-.mode {
+.theme {
     position: absolute;
-    transition: all 200ms ease-in-out;
     opacity: 0%;
 }
 
-.mode.show {
+.theme.show {
     opacity: 100%;
 }
 
@@ -84,8 +84,8 @@ nav {
     height: 100%;
     width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
     min-width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
-    transition: all 400ms ease-in-out;
-    transition-delay: 50ms;
+    transition: all var(--transition-time) ease-in-out;
+    //transition-delay: 50ms;
     z-index: 49;
     box-shadow: 0px 0px 0.72em var(--theme-10);
 
@@ -134,8 +134,8 @@ nav {
                 flex: 1 0 0%;
                 opacity: 0%;
                 font-size: 0px;
-                transition: all 400ms ease-in-out;
-                transition-delay: 50ms;
+                transition: all var(--transition-time) ease-in-out;
+                //transition-delay: 50ms;
             }
         }
     }

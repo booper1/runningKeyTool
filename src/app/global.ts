@@ -17,7 +17,6 @@ export class Global {
     public static main: any;
     public static light: any;
     public static dark: any;
-
     public static navOpen: boolean = true;
 
     public static toggleNav(): void {
@@ -38,12 +37,10 @@ export class Global {
         if (document.documentElement.getAttribute('data-theme') !== 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('data-theme', 'light');
-            console.log('Light');
         }
         else {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('data-theme', 'dark');
-            console.log('Dark');
         }
     }
 }
