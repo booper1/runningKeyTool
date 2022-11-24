@@ -59,7 +59,6 @@
     align-items: center;
     justify-content: center;
     font-size: calc(var(--nav-icon-size) * 2 / 3);
-    transition: all calc(var(--transition-time) / 2) ease-in-out;
     color: var(--theme-7);
 
     &:hover {
@@ -70,6 +69,7 @@
 .theme {
     position: absolute;
     opacity: 0%;
+    transition: all var(--transition-time) ease-in-out;
 }
 
 .theme.show {

@@ -1,12 +1,5 @@
 export class Global {
     public static author: string = "Booper_1";
-    public static theme: string = "themeMono";
-
-    // Styles
-    public static themeMono_bg = "#333333";
-    public static themeMono_text = "#ffffff";
-    public static themeSynth_bg = "#241235";
-    public static themeSynth_text = "#ea088b";
 
     public static topBun: any;
     public static patty: any;
@@ -18,6 +11,8 @@ export class Global {
     public static light: any;
     public static dark: any;
     public static navOpen: boolean = true;
+
+    public static page: string = "";
 
     public static toggleNav(): void {
         Global.topBun != null ? Global.topBun.classList.toggle('angle') : console.log("Undefined");

@@ -1,5 +1,14 @@
 :root {
-    // Default [data-theme="dark"]
+    --nav-gap: 1rem;
+    --nav-icon-size: 60px;
+    --nav-per: 17%;
+    --nav-min: 260px;
+    --nav-max: 360px;
+    --transition-time: 300ms;
+    --theme-color1: grey;
+}
+
+[data-theme="dark"] {
     --theme-1: #121212; // Background
     --theme-2: #323232; // Surface
     --theme-3: #fc7b00; // Primary
@@ -10,13 +19,6 @@
     --theme-8: #7c3c00; // On Primary
     --theme-9: #1a2904; // On Secondary
     --theme-10: #0000008a; // Shadow
-
-    --nav-gap: 1rem;
-    --nav-icon-size: 60px;
-    --nav-per: 17%;
-    --nav-min: 260px;
-    --nav-max: 360px;
-    --transition-time: 300ms;
 }
 
 [data-theme="light"] {
