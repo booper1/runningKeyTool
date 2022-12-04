@@ -4,9 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { Global } from './global';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, title: "Running Key Tool" },
-    { path: 'home', redirectTo: '' },
-    { path: '#', redirectTo: '' }
+    { path: 'runningKeyTool', component: HomeComponent, title: "Running Key Tool" }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
