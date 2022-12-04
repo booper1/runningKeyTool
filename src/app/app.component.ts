@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Global } from './global';
 
@@ -7,24 +7,7 @@ import { Global } from './global';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     constructor(private router: Router) {
-    }
-
-    ngOnInit(): void {
-        Global.sidebar = document.getElementById("side");
-        Global.clickNet = document.getElementById("clickNet");
-        Global.main = document.getElementById("main");
-    }
-
-    toggleNav(): void {
-        Global.toggleNav();
-    }
-
-    changeOfRoutes(event: any): void {
-        Global.page = this.router.url.substring(1);
-        if (Global.page === "") {
-            Global.page = "home";
-        }
     }
 }

@@ -1,11 +1,5 @@
 <body>
-    <div class="wrapper">
-        <div class="sidebar push" id="side">
-            <app-sidenav></app-sidenav>
-        </div>
-        <div class="clickNet enabled" id="clickNet" (click)="toggleNav()"></div>
-        <div class="main blur" id="main">
-            <router-outlet (activate)="changeOfRoutes($event)"></router-outlet>
-        </div>
+    <div class="main">
+        <router-outlet></router-outlet>
     </div>
 </body>

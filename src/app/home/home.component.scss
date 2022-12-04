@@ -1,1 +1,53 @@
+.navTheme {
+    position: absolute;
+    top: var(--nav-gap);
+    right: var(--nav-gap);
+    border-radius: 50%;
+    height: var(--nav-icon-size);
+    width: var(--nav-icon-size);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--nav-icon-size) * 2 / 3);
+    color: var(--theme-5);
 
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.theme {
+    position: absolute;
+    opacity: 0%;
+    transition: all var(--transition-time) ease-in-out;
+}
+
+.theme.show {
+    opacity: 100%;
+}
+
+textarea {
+    padding: 7px;
+    resize: both;
+    color: var(--theme-6);
+    background-color: var(--theme-2);
+    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+}
+
+button {
+    background-color: var(--theme-2);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: var(--theme-5);
+    font-size: 20px;
+    padding: 6px 24px;
+    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+
+    &:active {
+        background-color: var(--theme-2);
+        box-shadow: 0 2px var(--theme-5);
+        transform: translateY(2px);
+    }
+}

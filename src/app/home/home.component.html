@@ -1,3 +1,22 @@
-<h3>
-    Home Coming Soon™
-</h3>
+<div class="navTheme" (click)="toggleTheme()">
+    <fa-icon [icon]="['fas', 'sun']" class="theme show" id="light"></fa-icon>
+    <fa-icon [icon]="['fas', 'moon']" class="theme" id="dark"></fa-icon>
+</div>
+<!------------------------------------------------------------------------------------------------------->
+<h2> Home Coming Soon™ </h2>
+<br />
+<h3> Ciphertext: </h3>
+<textarea id="ciphertext" name="ciphertext" placeholder="Enter text here" rows="5" cols="100"></textarea>
+<br />
+<br />
+<br />
+<h3> Crib: </h3>
+<textarea id="crib" name="crib" placeholder="Enter text here" rows="5" cols="50"></textarea>
+<br />
+<br />
+<br />
+<button onclick="analyze()">Test</button>
+<br />
+<br />
+<br />
+<div>OUTPUT</div>
