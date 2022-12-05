@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FontAwesomeModule,
         BrowserAnimationsModule
     ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/runningKeyTool' }],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

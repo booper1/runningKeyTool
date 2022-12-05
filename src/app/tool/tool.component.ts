@@ -35,5 +35,6 @@ export class ToolComponent {
         var ciphertext = ((document.getElementById("ciphertext") as HTMLInputElement).value);
         var crib = ((document.getElementById("crib") as HTMLInputElement).value);
         this.output = ciphertext + "" + crib;
+        console.log(this.output);
     }
 }
