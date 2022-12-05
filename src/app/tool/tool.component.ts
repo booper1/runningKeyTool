@@ -32,9 +32,14 @@ export class ToolComponent {
     }
 
     analyze(): void {
-        var ciphertext = ((document.getElementById("ciphertext") as HTMLInputElement).value);
-        var crib = ((document.getElementById("crib") as HTMLInputElement).value);
-        this.output = ciphertext + "" + crib;
-        console.log(this.output);
+        this.output = ((document.getElementById("ciphertext") as HTMLInputElement).value) + " ; " + ((document.getElementById("crib") as HTMLInputElement).value);
+        ((document.getElementById("ciphertext") as HTMLInputElement).value) = "";
+        ((document.getElementById("crib") as HTMLInputElement).value) = "";
+    }
+
+    clear(): void {
+        ((document.getElementById("ciphertext") as HTMLInputElement).value) = "";
+        ((document.getElementById("crib") as HTMLInputElement).value) = "";
+        this.output = "";
     }
 }
