@@ -6,12 +6,20 @@
 <h2> Running Key Tool </h2>
 <br />
 <h3> Ciphertext: </h3>
-<textarea id="ciphertext" name="ciphertext" placeholder="Enter text here" rows="5" cols="100"></textarea>
+<textarea id="ciphertext"
+          placeholder="Enter text here"
+          rows="5"
+          cols="100"
+          onkeydown="return /[a-z ]/i.test(event.key)"></textarea>
 <br />
 <br />
 <br />
 <h3> Crib: </h3>
-<textarea id="crib" name="crib" placeholder="Enter text here" rows="5" cols="50"></textarea>
+<textarea id="crib"
+          placeholder="Enter text here"
+          rows="5"
+          cols="50"
+          onkeydown="return /[a-z ]/i.test(event.key)"></textarea>
 <br />
 <br />
 <br />
@@ -20,4 +28,12 @@
 <br />
 <br />
 <br />
-<div> Result: {{ output }}</div>
+<h5> Result:</h5>
+<div class="output">{{ ciphertext }}</div>
+<div class="output">{{ buffer }}{{ crib }}</div>
+<div class="output">{{ buffer }}{{ output }}</div>
+
+<div *ngIf="error" class="error">{{ errorMsg }}</div>
+<br />
+<button (click)="shift(0)"> < Shift Left</button>
+<button (click)="shift(1)">Shift Right > </button>
