@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { Global } from './global';
+import { ToolComponent } from './tool/tool.component';
 
-const routes: Routes = [
-    { path: 'runningKeyTool', component: HomeComponent, title: "Running Key Tool" }
-];
+const routes: Routes = [];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
 

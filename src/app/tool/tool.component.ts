@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Global } from '../global';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    selector: 'app-tool',
+    templateUrl: './tool.component.html',
+    styleUrls: ['./tool.component.scss']
 })
-export class HomeComponent {
+export class ToolComponent {
     output: string = "";
 
     ngOnInit(): void {
