@@ -13,7 +13,7 @@ export class ToolComponent {
     baseIndex: number = 0;
     buffer: string = "";
     error: boolean = false;
-    errorMsg: string = "Please enter only letter characters";
+    errorMsg: string = "Please enter only alphabetical characters";
 
     ngOnInit(): void {
         Global.light = document.getElementById("light");
@@ -37,6 +37,13 @@ export class ToolComponent {
         Global.toggleTheme();
     }
 
+    err(): void {
+        this.ciphertext = "";
+        this.crib = "";
+        this.output = "";
+        this.error = true;
+    }
+
     analyze(): void {
         this.ciphertext = ((document.getElementById("ciphertext") as HTMLInputElement).value).toLowerCase().replace(/\s/g, "");
         this.crib = ((document.getElementById("crib") as HTMLInputElement).value).toLowerCase().replace(/\s/g, "");
@@ -57,10 +64,7 @@ export class ToolComponent {
             }
             this.ciphertext = this.ciphertext.toUpperCase();
         } else {
-            this.ciphertext = "";
-            this.crib = "";
-            this.output = "";
-            this.error = true;
+            this.err();
         }
     }
 
@@ -73,15 +77,44 @@ export class ToolComponent {
     }
 
     shift(direction: number): void {
-        if (direction === 0) { // Shift Left
-            if (this.baseIndex > 0) {
-                this.baseIndex--;
-                this.analyze();
+        switch (direction) {
+            case 1: {
+                if (this.baseIndex < this.ciphertext.length - this.crib.length) {
+                    this.baseIndex++;
+                    this.analyze();
+                }
+                break;
             }
-        } else { // Shift Right
-            if (this.baseIndex < this.ciphertext.length - this.crib.length) {
-                this.baseIndex++;
+            case -1: {
+                if (this.baseIndex > 0) {
+                    this.baseIndex--;
+                    this.analyze();
+                }
+                break;
+            }
+            case 2: {
+                this.baseIndex < this.ciphertext.length - this.crib.length - 5 ? this.baseIndex += 5 : this.baseIndex = this.ciphertext.length - this.crib.length;
                 this.analyze();
+                break;
+            }
+            case -2: {
+                this.baseIndex > 5 ? this.baseIndex -= 5 : this.baseIndex = 0;
+                this.analyze();
+                break;
+            }
+            case 3: {
+                this.baseIndex = this.ciphertext.length - this.crib.length;
+                this.analyze();
+                break;
+            }
+            case -3: {
+                this.baseIndex = 0;
+                this.analyze();
+                break;
+            }
+            default: {
+                this.err();
+                break;
             }
         }
     }

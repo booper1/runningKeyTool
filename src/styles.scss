@@ -1,33 +1,19 @@
 :root {
-    --nav-gap: 1rem;
-    --nav-icon-size: 60px;
-    --nav-per: 17%;
+    --gap: 1.2rem;
+    --theme-icon-size: 60px;
     --transition-time: 300ms;
-    --theme-color1: grey;
 }
 
 [data-theme="dark"] {
     --theme-1: #121212; // Background
     --theme-2: #323232; // Surface
-    --theme-3: #fc7b00; // Primary
-    --theme-4: #4a7912; // Secondary
     --theme-5: #d7d7d7; // On Background
-    --theme-6: #a2a2a2; // On Surface Head
-    --theme-7: #e2e2e2; // On Surface Main
-    --theme-8: #7c3c00; // On Primary
-    --theme-9: #1a2904; // On Secondary
-    --theme-10: #0000008a; // Shadow
+    --theme-6: #a2a2a2; // On Surface
 }
 
 [data-theme="light"] {
     --theme-1: #ededed; // Background
     --theme-2: #cdcdcd; // Surface
-    --theme-3: #fc7b00; // Primary
-    --theme-4: #4a7912; // Secondary
     --theme-5: #282828; // On Background
-    --theme-6: #5d5d5d; // On Surface Head
-    --theme-7: #1d1d1d; // On Surface Main
-    --theme-8: #7c3c00; // On Primary
-    --theme-9: #1a2904; // On Secondary
-    --theme-10: #0000008a; // Shadow
+    --theme-6: #5d5d5d; // On Surface
 }
