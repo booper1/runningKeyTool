@@ -1,5 +1,16 @@
 <body>
-    <div class="main">
+    <header>
+        <h2> Running Key Tool </h2>
+        <div class="theme" (click)="toggleTheme()">
+            <fa-icon [icon]="['fas', 'sun']" class="themeIcon show" id="light"></fa-icon>
+            <fa-icon [icon]="['fas', 'moon']" class="themeIcon" id="dark"></fa-icon>
+        </div>
+    </header>
+    <main>
         <app-tool></app-tool>
-    </div>
+    </main>
+    <footer>
+        <h6>Site designed for CSC/MAT 483 (Cryptology) by {{ author }}</h6>
+        <a href="https://github.com/booper1/runningKeyTool" target="_blank">GitHub Repository</a>
+    </footer>
 </body>

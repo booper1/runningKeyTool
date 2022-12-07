@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Global } from '../global';
 
 @Component({
     selector: 'app-tool',
@@ -7,42 +6,13 @@ import { Global } from '../global';
     styleUrls: ['./tool.component.scss']
 })
 export class ToolComponent {
-    ciphertext: string = "";
-    crib: string = "";
-    output: string = "";
     baseIndex: number = 0;
     buffer: string = "";
+    ciphertext: string = "";
+    crib: string = "";
     error: boolean = false;
     errorMsg: string = "Please enter only alphabetical characters";
-
-    ngOnInit(): void {
-        Global.light = document.getElementById("light");
-        Global.dark = document.getElementById("dark");
-
-        document.documentElement.setAttribute('data-theme', 'light');
-        if (localStorage.getItem('data-theme') === null) {
-            localStorage.setItem('data-theme', 'light');
-            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                Global.toggleTheme();
-            }
-        }
-        else {
-            if (localStorage.getItem('data-theme') === 'dark') {
-                Global.toggleTheme();
-            }
-        }
-    }
-
-    toggleTheme(): void {
-        Global.toggleTheme();
-    }
-
-    err(): void {
-        this.ciphertext = "";
-        this.crib = "";
-        this.output = "";
-        this.error = true;
-    }
+    output: string = "";
 
     analyze(): void {
         this.ciphertext = ((document.getElementById("ciphertext") as HTMLInputElement).value).toLowerCase().replace(/\s/g, "");
@@ -62,8 +32,10 @@ export class ToolComponent {
             for (let i: number = 0; i < this.baseIndex; i++) {
                 this.buffer += " ";
             }
+
             this.ciphertext = this.ciphertext.toUpperCase();
-        } else {
+        }
+        else {
             this.err();
         }
     }
@@ -73,48 +45,59 @@ export class ToolComponent {
         ((document.getElementById("crib") as HTMLInputElement).value) = "";
         this.ciphertext = "";
         this.crib = "";
+        this.error = false;
+        this.output = "";
+    }
+
+    err(): void {
+        this.ciphertext = "";
+        this.crib = "";
+        this.error = true;
         this.output = "";
     }
 
     shift(direction: number): void {
-        switch (direction) {
-            case 1: {
-                if (this.baseIndex < this.ciphertext.length - this.crib.length) {
-                    this.baseIndex++;
-                    this.analyze();
+        let length = this.ciphertext.length - this.crib.length;
+        if (length > 0) {
+            switch (direction) {
+                case 1: {
+                    if (this.baseIndex < length) {
+                        this.baseIndex++;
+                        this.analyze();
+                    }
+                    break;
                 }
-                break;
-            }
-            case -1: {
-                if (this.baseIndex > 0) {
-                    this.baseIndex--;
-                    this.analyze();
+                case -1: {
+                    if (this.baseIndex > 0) {
+                        this.baseIndex--;
+                        this.analyze();
+                    }
+                    break;
                 }
-                break;
-            }
-            case 2: {
-                this.baseIndex < this.ciphertext.length - this.crib.length - 5 ? this.baseIndex += 5 : this.baseIndex = this.ciphertext.length - this.crib.length;
-                this.analyze();
-                break;
-            }
-            case -2: {
-                this.baseIndex > 5 ? this.baseIndex -= 5 : this.baseIndex = 0;
-                this.analyze();
-                break;
-            }
-            case 3: {
-                this.baseIndex = this.ciphertext.length - this.crib.length;
-                this.analyze();
-                break;
-            }
-            case -3: {
-                this.baseIndex = 0;
-                this.analyze();
-                break;
-            }
-            default: {
-                this.err();
-                break;
+                case 2: {
+                    this.baseIndex < length - 5 ? this.baseIndex += 5 : this.baseIndex = length;
+                    this.analyze();
+                    break;
+                }
+                case -2: {
+                    this.baseIndex > 5 ? this.baseIndex -= 5 : this.baseIndex = 0;
+                    this.analyze();
+                    break;
+                }
+                case 3: {
+                    this.baseIndex = length;
+                    this.analyze();
+                    break;
+                }
+                case -3: {
+                    this.baseIndex = 0;
+                    this.analyze();
+                    break;
+                }
+                default: {
+                    this.err();
+                    break;
+                }
             }
         }
     }

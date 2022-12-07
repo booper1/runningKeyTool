@@ -1,63 +1,55 @@
-.navTheme {
-    position: absolute;
-    top: var(--gap);
-    right: var(--gap);
-    border-radius: 50%;
-    height: var(--theme-icon-size);
-    width: var(--theme-icon-size);
-    cursor: pointer;
+.wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(var(--theme-icon-size) * 2 / 3);
-    color: var(--theme-5);
-
-    &:hover {
-        transform: scale(1.1);
-    }
-}
-
-.theme {
-    position: absolute;
-    opacity: 0%;
-    transition: all var(--transition-time) ease-in-out;
-}
-
-.theme.show {
-    opacity: 100%;
+    flex-direction: column;
+    gap: calc(2 * var(--gap));
 }
 
 textarea {
-    width: 100ch;
-    max-width: 100%;
-    height: 20ch;
-    padding: 7px;
-    resize: both;
-    color: var(--theme-6);
     background-color: var(--theme-2);
+    color: var(--theme-4);
+    max-width: 100%;
+    padding: 0.5em;
+    resize: both;
     transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
 }
 
-button {
-    background-color: var(--theme-2);
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    color: var(--theme-5);
-    font-size: 20px;
-    padding: 6px 18px;
-    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+#ciphertext {
+    height: 20ch;
+    width: 100ch;
+}
 
-    &:active {
-        box-shadow: 0 2px var(--theme-5);
-        transform: translateY(2px);
+#crib {
+    height: 10ch;
+    width: 50ch;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 3px;
+
+    button {
+        background-color: var(--theme-2);
+        border: none;
+        border-radius: 6px;
+        color: var(--theme-3);
+        cursor: pointer;
+        font-size: 20px;
+        padding: 6px 18px;
+        transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+
+        &:active {
+            box-shadow: 0 2px var(--theme-3);
+            transform: translateY(2px);
+        }
     }
 }
 
 .output {
-    padding: var(--gap);
-    overflow: auto;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    overflow: auto;
+    padding: var(--gap);
     white-space: pre;
 }
 
@@ -65,32 +57,21 @@ button {
     color: red;
 }
 
-.shiftButtons {
-    display: flex;
-    gap: 3px;
-}
-
-
-
-/* width */
 ::-webkit-scrollbar {
     width: 1em;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: var(--theme-2);
+    border-radius: 0.5em;
     box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.5);
-    border-radius: 0.5em;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--theme-5);
+    background: var(--theme-3);
     border-radius: 0.5em;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-5);
+    background: var(--theme-3);
 }

@@ -1,6 +1,4 @@
 export class Global {
-    public static author: string = "Cooper Baumgarth / Booper_1";
-
     public static light: any;
     public static dark: any;
 

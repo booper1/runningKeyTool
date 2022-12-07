@@ -1,45 +1,42 @@
-<div class="navTheme" (click)="toggleTheme()">
-    <fa-icon [icon]="['fas', 'sun']" class="theme show" id="light"></fa-icon>
-    <fa-icon [icon]="['fas', 'moon']" class="theme" id="dark"></fa-icon>
-</div>
-<!------------------------------------------------------------------------------------------------------->
-<h2> Running Key Tool </h2>
-<br />
-<h3> Ciphertext: </h3>
-<textarea id="ciphertext"
-          placeholder="Enter text here"
-          onkeydown="return /[a-z ]/i.test(event.key)"></textarea>
-<br />
-<br />
-<br />
-<h3> Crib: </h3>
-<textarea id="crib"
-          placeholder="Enter text here"
-          onkeydown="return /[a-z ]/i.test(event.key)"></textarea>
-<br />
-<br />
-<br />
-<div class="shiftButtons">
-    <button (click)="analyze()">Submit</button>
-    <button (click)="clear()">Clear</button>
-</div>
-<br />
-<br />
-<br />
-<h5> Result:</h5>
-<div *ngIf="output" class="output">
-    <div>{{ ciphertext }}</div>
-    <div>{{ buffer }}{{ crib }}</div>
-    <div>{{ buffer }}{{ output }}</div>
-</div>
+<div class="wrapper">
+    <div>
+        <h3> Ciphertext: </h3>
+        <textarea id="ciphertext"
+                  placeholder="Enter text here"
+                  onkeydown="return /[a-z ]/i.test(event.key)"></textarea>
+    </div>
 
-<div *ngIf="error" class="error">{{ errorMsg }}</div>
+    <div>
+        <h3> Crib: </h3>
+        <textarea id="crib"
+                  placeholder="Enter text here"
+                  onkeydown="return /[a-z ]/i.test(event.key)"></textarea>
+    </div>
 
-<div *ngIf="output" class="shiftButtons">
-    <button (click)="shift(-3)"><fa-icon [icon]="['fas', 'backward-fast']"></fa-icon></button>
-    <button (click)="shift(-2)"><fa-icon [icon]="['fas', 'backward']"></fa-icon></button>
-    <button (click)="shift(-1)"><fa-icon [icon]="['fas', 'chevron-left']"></fa-icon></button>
-    <button (click)="shift(1)"><fa-icon [icon]="['fas', 'chevron-right']"></fa-icon></button>
-    <button (click)="shift(2)"><fa-icon [icon]="['fas', 'forward']"></fa-icon></button>
-    <button (click)="shift(3)"><fa-icon [icon]="['fas', 'forward-fast']"></fa-icon></button>
+    <div class="buttonGroup">
+        <button (click)="analyze()">Submit</button>
+        <button (click)="clear()">Clear</button>
+    </div>
+
+    <div>
+        <div *ngIf="output">
+            <h4> Result:</h4>
+            <div class="output">
+                <div>{{ ciphertext }}</div>
+                <div>{{ buffer }}{{ crib }}</div>
+                <div>{{ buffer }}{{ output }}</div>
+            </div>
+        </div>
+
+        <div *ngIf="error" class="error">{{ errorMsg }}</div>
+
+        <div *ngIf="output" class="buttonGroup">
+            <button (click)="shift(-3)"><fa-icon [icon]="['fas', 'backward-fast']"></fa-icon></button>
+            <button (click)="shift(-2)"><fa-icon [icon]="['fas', 'backward']"></fa-icon></button>
+            <button (click)="shift(-1)"><fa-icon [icon]="['fas', 'chevron-left']"></fa-icon></button>
+            <button (click)="shift(1)"><fa-icon [icon]="['fas', 'chevron-right']"></fa-icon></button>
+            <button (click)="shift(2)"><fa-icon [icon]="['fas', 'forward']"></fa-icon></button>
+            <button (click)="shift(3)"><fa-icon [icon]="['fas', 'forward-fast']"></fa-icon></button>
+        </div>
+    </div>
 </div>
