@@ -50,11 +50,16 @@ textarea {
     letter-spacing: 0.1em;
     overflow: auto;
     padding: var(--gap);
+    padding-bottom: calc(var(--gap) / 2);
     white-space: pre;
 }
 
 .error {
     color: red;
+}
+
+.buttonGroup.arrows {
+    padding-top: calc(var(--gap) / 2);
 }
 
 ::-webkit-scrollbar {
